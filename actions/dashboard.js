@@ -136,6 +136,7 @@ export async function createAccount(data) {
 
 export async function getDashboardData() {
   const { userId } = await auth();
+  console.log(userId)
   if (!userId) throw new Error("Unauthorized");
 
   const user = await db.user.findUnique({
